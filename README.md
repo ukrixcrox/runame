@@ -1,2 +1,2 @@
 # runame
-Simple renamer-cli written in rust
+Simple file renamer-cli written in rust
