@@ -42,24 +42,22 @@ fn main() {
             "y" => {
                 rename(&args.current_filename, &args.new_filename).unwrap_or_else(|e| println!("Error: {}", e));
                 println!("Renamed {} to {}", args.current_filename.bold().blue(), args.new_filename.bold().blue());
-                std::process::exit(0x0100);
             },
 
             "n" => {
                 println!("{}", "Stopping operation".bold().blue());
-                std::process::exit(0x0100);
             },
 
             _ => {
-                println!("{}", "no input has been given!".bold().red());
-                std::process::exit(0x0100);
+                println!("{}", "No valid option has been given!".bold().red());
             },
 
         }
-
+        std::process::exit(0x0100);
     }
 
     if args.verbose && !args.interactive{
+        rename(&args.current_filename, &args.new_filename).unwrap_or_else(|e| println!("Error: {}", e));
         println!("Renamed {} to {}", args.current_filename.bold().blue(), args.new_filename.bold().green());
         std::process::exit(0x0100);
     }
