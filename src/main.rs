@@ -18,11 +18,13 @@ struct Args{
     new_filename: String,
 
     /// interactive
-    #[arg(short='i', long)]
+    #[arg(short='i')]
+    #[arg(long="interactive")]
     interactive:bool,
 
     /// verbose output
-    #[arg(short='v', long)]
+    #[arg(short='v')]
+    #[arg(long="verbose")]
     verbose:bool,
     
 }
